@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+
+            <h1>NEWS</h1>
+            <button id="trend">Trending</button>
+            <button id="home">Home</button>
+            <input type="text" name="" id="search" placeholder="Enter search term">
+        </div>
+        <div class="content">
+            <div class="box">
+
+            </div>
+        </div>
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .para {
+            position: absolute;
+            border: 1px solid red transparent;
+            top: 350px;
+            height: auto;
+            background-color: transparent;
+        }
+
+        hr {
+            position: relative;
+            top: 100px;
+        }
+
+        .content {
+            position: relative;
+            border: 1px solid red;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100vw;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+
+        .box:first-child {
+            margin-top: 80px;
+        }
+
+        .box {
+            position: relative;
+            display: flex;
+            margin: 50px;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            border: 1px solid red transparent;
+            width: 900px;
+            height: 550px;
+            background-color: white;
+            border-radius: 50px;
+
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .container {
+            position: relative;
+            border: 1px solid red transparent;
+            height: auto;
+            background-color: #eceef2;
+        }
+
+        .nav {
+            position: fixed;
+            border: 1px solid red transparent;
+            display: flex;
+            width: 100vw;
+            height: 60px;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+
+
+        }
+
+        h1 {
+            position: relative;
+            margin-right: auto;
+            left: 20px;
+
+
+        }
+
+        h2 {
+            display: block;
+            margin-bottom: -15px;
+        }
+
+        img {
+            margin-top: 10px;
+            border: 1px solid red transparent;
+            width: 95%;
+            height: 350px;
+            border-radius: 50px;
+        }
+
+        #search {
+
+            position: relative;
+            border-radius: 100px;
+            margin-left: auto;
+            right: 20px;
+            border: none;
+            height: 40px;
+            width: 250px;
+            font-size: 16px;
+            padding-left: 40px;
+            background-image: url(./src/search-interface-symbol.png);
+            background-size: 28px;
+            background-position: 250px center;
+            background-repeat: no-repeat;
+            background-color: #eceef2;
+
+        }
+
+        button {
+            margin-left: 50px;
+
+            border: none;
+            width: 120px;
+            text-align: end;
+            background-color: red;
+            color: #4d4e4f;
+            font-weight: bold;
+            font-size: large;
+
+        }
+
+        #home {
+            width: 90px;
+            height: 50px;
+            background-image: url(./src/home.png);
+            background-color: transparent;
+            background-position: left 10px;
+            background-size: 25px;
+            background-repeat: no-repeat;
+
+        }
+
+        #trend {
+
+            height: 100%;
+            width: 130px;
+            background-color: transparent;
+            background-image: url(./src/trending.png);
+            background-position: left 5px;
+            background-size: 40px;
+            background-repeat: no-repeat;
+        }
+
+        #trend:hover {
+            cursor: pointer;
+        }
+
+        #home:hover {
+            cursor: pointer;
+        }
+
+        #dec:hover {
+            cursor: pointer;
+        }
+
+        @media screen and (width <=1154px) {
+            .box {
+                position: relative;
+                width: 600px;
+                height: 420px;
+                
+                
+            }
+            img{
+                height: 250px;
+            }
+            .para{
+                top: 250px;
+                font-size: 15px;
+            }
+            
+
+        }
+
+        @media screen and (width <=770px) {
+            .box{
+                position: relative;
+                width: 350px;
+                height: 360px;
+            }
+            img{
+                height: 150px;
+            }
+            h2{
+                font-size: 20px;
+            }
+            .para{
+                top: 150px;
+            }
+
+            button {
+                color: transparent;
+                background-position: center;
+                background-color: transparent;
+
+                margin-left: 20px;
+
+            }
+
+            #home {
+                width: 30px;
+
+            }
+
+            #trend {
+                width: 40px;
+            }
+
+            #search {
+
+                background-position: 225px center;
+                width: fit-content;
+
+            }
+
+            @media screen and (width <=500px) {
+                .box{
+                    margin-left: auto;
+                    width: 100vw;
+                    border-radius: 10px;
+                }
+                #search {
+
+                    background-position: 10px center;
+                    text-align: center;
+                    width: 80px;
+                    margin-right: -20px;
+                    font-size: small;
+
+                }
+
+                #search::placeholder {
+                    color: transparent;
+                }
+
+            }
+        }
+    </style>
+</body>
+<script>
+    let url = 'https://newsapi.org/v2/everything?q=apple&from=2024-09-24&to=2024-09-24&sortBy=popularity&apiKey=3134746dc14d48cda27824c28765c25f'
+
+    let a = 0
+    let content = '';
+
+
+    fetch(url)
+        .then(res => res.json())
+        .then(res => {
+
+            res.articles.forEach(element => {
+
+                a++
+                if (element.title !== '[Removed]') {
+                    console.log('removed')
+
+                    if (!element.url.startsWith('https://consent.yahoo.com') & a <= 100) {
+                        console.log(element)
+                        console.log('total' + a)
+                        content += `
+                        <div class="box" onclick="send()">
+                            <img src="${element.urlToImage}" ></img>
+                            <div class="para">
+                              <h2 id='title'>${element.title}</h2>
+                              <p >${element.description} <a id='dec'  href="${element.url}" target="_blank">  <strong>    Read more.. </strong> </a></p>
+                              <hr>
+                              </div>
+                               
+                             </div>
+                            
+                        `;
+
+
+
+
+
+
+
+
+                    }
+
+                }
+
+
+            });
+            document.getElementsByClassName('content')[0].innerHTML = content
+        })
+
+</script>
+
+</html>
