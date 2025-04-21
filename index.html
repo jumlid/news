@@ -14,23 +14,20 @@
             <h1>NEWS</h1>
             <button id="trend">Trending</button>
             <button id="home">Home</button>
-            <button id="se"></button>
+
             <input type="text" name="" id="search" placeholder="Enter search term" autocomplete="off">
         </div>
         <div class="content">
 
-            <div class="box" onclick="send()">
-                <img src="${element.urlToImage}"></img>
-                <div class="para">
-                    <h2 id='title'>test title</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium saepe illo quisquam
-                        totam voluptas sint quidem atque aut hic, velit voluptatem maxime voluptatibus inventore
-                        molestias consequatur accusamus perspiciatis ducimus ut! <a id='dec' href="" target="_blank">
-                            <strong> Read more.. </strong> </a></p>
-                    <hr>
-                </div>
 
-            </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -38,54 +35,63 @@
     </div>
 
     <style>
-        body {
+        * {
             margin: 0;
+            padding: 0;
         }
 
-        #se {
-            display: none;
-        }
+
 
         .para {
-            position: absolute;
-            border: 1px solid red transparent;
-            top: 350px;
-            height: auto;
+            position: relative;
+
+            font-size: 15px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            height: fit-content;
+            overflow: hidden;
             background-color: transparent;
         }
 
-        hr {
-            position: relative;
-            top: 100px;
-        }
+
 
         .content {
             position: relative;
-            border: 1px solid red transparent;
+
             height: auto;
             display: flex;
             flex-wrap: wrap;
             width: 100vw;
+            gap: 20px;
+            justify-content: center;
             align-items: center;
-            flex-direction: column;
+            flex-direction: row;
 
         }
 
 
-        .box:first-child {
-            margin-top: 80px;
+
+
+        img {
+
+            height: 300px;
         }
 
         .box {
+            margin-top: 90px;
+            margin-left: 20px;
             position: relative;
             display: flex;
-            margin: 50px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
-            text-align: center;
-            position: relative;
-            border: 1px solid red;
-            width: 900px;
-            height: 550px;
+
+
+
+            width: 500px;
+            height: fit-content;
             background-color: white;
             border-radius: 50px;
 
@@ -98,14 +104,14 @@
 
         .container {
             position: relative;
-            border: 1px solid red transparent;
+
             height: auto;
             background-color: #eceef2;
         }
 
         .nav {
             position: fixed;
-            border: 1px solid red transparent;
+
             display: flex;
             width: 100vw;
             height: 60px;
@@ -125,25 +131,20 @@
 
         }
 
-        h2 {
-            display: block;
-            margin-bottom: -15px;
-        }
+
 
         img {
             margin-top: 10px;
-            border: 1px solid red transparent;
+
             width: 95%;
-            height: 350px;
+            height: 300px;
             border-radius: 50px;
         }
 
         #search {
-
             position: relative;
             border-radius: 100px;
             margin-left: auto;
-
             right: 20px;
             border: none;
             height: 40px;
@@ -155,7 +156,7 @@
             background-position: 250px center;
             background-repeat: no-repeat;
             background-color: #eceef2;
-
+            display: none;
         }
 
         #search:focus {
@@ -184,6 +185,7 @@
             background-position: left 10px;
             background-size: 25px;
             background-repeat: no-repeat;
+            display: none;
 
         }
 
@@ -196,6 +198,7 @@
             background-position: left 5px;
             background-size: 40px;
             background-repeat: no-repeat;
+            display: none;
         }
 
         #trend:hover {
@@ -210,137 +213,41 @@
             cursor: pointer;
         }
 
-        @media screen and (width <=1154px) {
-            .box {
-                position: relative;
-                width: 600px;
-                height: 420px;
+        @media (width<=650px) {
 
+
+            .box {
+                width: 360px;
+                height: fit-content;
+                margin-left: -2px;
+                display: block;
+                padding: 5px;
 
             }
 
             img {
-                height: 250px;
-            }
-
-            .para {
-                top: 250px;
-                font-size: 15px;
-            }
-
-
-        }
-
-
-
-        @media screen and (width <=770px) {
-            .box {
+                display: block;
                 position: relative;
-                width: 400px;
-                height: 350px;
-            }
+                margin-left: auto;
+                margin-right: auto;
 
-            img {
-                height: 150px;
-            }
 
-            h2 {
-                font-size: 20px;
+                height: 200px;
             }
 
             .para {
-                top: 150px;
-            }
 
-            button {
-                color: transparent;
-                background-position: center;
-                background-color: transparent;
-
-                margin-left: 20px;
-
-            }
-
-            #search {
-                margin-left: 10px;
-                width: 200px;
-                background-position: 205px center;
-
-
-            }
-
-            #home {
-                width: 30px;
-                margin-right: 100px;
-
-
-            }
-
-            #trend {
-                margin-right: -10px;
-                width: 40px;
-
-
+                display: nne;
             }
 
 
-
-            @media screen and (width <=500px) {
-
-                .box {
-                    margin-left: auto;
-                    width: 100vw;
-                    border-radius: 10px;
-                }
-
-                #home {
-                    margin-right: 20px;
-                }
-
-
-
-                #search::placeholder {
-                    color: transparent;
-                }
-
-            }
-
-            @media (width <=450px) {
-                #search {
-                    display: none;
-                }
-
-                #se {
-
-
-                    margin-right: 10px;
-                    height: 25px;
-                    width: 25px;
-                    background-image: url(src/search-interface-symbol.png);
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-color: transparent;
-                    background-size: contain;
-
-
-                    display: block;
-                }
-
-
-                #home {
-                    width: 25px;
-                    margin-right: 0px;
-                }
-
-
-            }
         }
     </style>
 </body>
 <script>
-    let apikey='  '
 
-    let url = `https://newsapi.org/v2/everything?q=keyword&apiKey=${apikey}`
+
+    let url = `https://serverfornewsapi-production.up.railway.app/server`
 
     let a = 0
     let content = '';
@@ -349,34 +256,35 @@
     fetch(url)
         .then(res => res.json())
         .then(res => {
-            console.log(res)
-
-            res.articles.forEach(element => {
+            //    console.log(res)
+            res.data.articles.forEach(element => {
 
                 a++
                 if (element.title !== '[Removed]') {
-                    console.log('removed')
+                    //      console.log('removed')
 
                     if (!element.url.startsWith('https://consent.yahoo.com') & a <= 100) {
-                        console.log(element.urlToImage)
-                        console.log('total' + a)
+                        //    console.log(element.url)
+
+                        //   console.log('total' + a)
                         if (element.urlToImage != null) {
+
                             content += `
-                          <div class="box" onclick="send()">
-                              <img src="${element.urlToImage}" ></img>
-                              <div class="para">
-                                <h2 id='title'>${element.title}</h2>
-                                <p >${element.description} <a id='dec'  href="${element.url}" target="_blank">  <strong>    Read more.. </strong> </a></p>
-                                <hr>
-                                </div>
-                                 
-                               </div>
-                              
-                          `;
+                              <div class="box" onclick="location.href='${element.url}'" >
+                                  <img src="${element.urlToImage}" ></img>
+                                  <div class="para">
+                                    <h2 id='title'>${element.title}</h2>
+                                    <p >${element.description}   </a></p>
+                                  
+                                    </div>
+                                     
+                                   </div>
+                                  
+                              `;
 
                         }
                         else {
-                            console.log('ops')
+                            //    console.log('ops')
                         }
 
 
