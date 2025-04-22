@@ -9,9 +9,11 @@
 👀 i know site lack some UI like search but i made this site just for practice purpose  to solve cors T_T i may or may not  add some additional buttons like a search buttons hehe 😏
 
 </p>
+<strong>
 <p> Requirments:  </p>
 <p>Express</p> 
   <code> npm install express </code>
 <p>Cors</p>
   <code> npm install cors </code>
                    
+</strong>
