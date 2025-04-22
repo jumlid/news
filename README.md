@@ -11,6 +11,7 @@
 </p>
 <p> Requirments:  </p>
 <p>Express</p> 
-''' npm install express '''
-<p>Cors</p>p
-''' npm install cors'''                    
+  <code> npm install express </code>
+<p>Cors</p>
+  <code> npm install cors </code>
+                   
